@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>何晶晶</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url('flower.jpg'); /* 替换为你的图片路径 */
+        background-size: cover; /* 背景图片覆盖整个页面 */
+        background-position: center; /* 背景图片居中 */
+        background-repeat: no-repeat; /* 背景图片不重复 */
+        background-attachment: fixed; /* 背景图片固定，不随滚动条滚动 */
+        height: 100vh; /* 设置页面高度为视口高度 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        margin: 20px;
+        border: 2px solid #4a90e2;
+        border-radius: 5px;
+      }
+      button {
+        padding: 10px 20px;
+        background: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      button:hover {
+        background: #357abd;
+      }
+      .error {
+        color: #dc3545;
+        padding: 10px;
+      }
+      .result {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>你同不同意何晶晶和黎怡然天下第一好</h1>
+    <div>
+      <input type="text" id="myInput" placeholder="yes or no" />
+      <button onclick="get()">确定</button>
+    </div>
+    <div id="result" class="result"></div> <!-- 用于显示结果 -->
+
+    <script>
+      function get() {
+        const answer = document.getElementById('myInput').value.trim().toLowerCase(); // 获取输入并转为小写
+        const resultDiv = document.getElementById('result'); // 获取结果容器
+
+        if (answer === 'yes') {
+          resultDiv.innerHTML = `
+            <h3>嘿嘿，我就知道你是这么想的！</h3>
+            <img src="good friend.jpg" alt="good friends" width="100%" height="300">
+          `;
+        } else if (answer === 'no') {
+          resultDiv.innerHTML = `<h3>哎呀，你是不是没说实话呀？</h3>`;
+        } else {
+          resultDiv.innerHTML = `<h3>请输入 "yes" 或 "no" 哦！</h3>`;
+        }
+      }
+    </script>
+  </body>
+</html>
